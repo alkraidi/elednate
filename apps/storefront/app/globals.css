@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* shadcn semantic colors mapped to brand palette */
+    --background: 0 0% 100%;
+    --foreground: 30 13% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 13% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 13% 9%;
+    --primary: 30 13% 9%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 22% 96%;
+    --secondary-foreground: 30 13% 9%;
+    --muted: 36 22% 96%;
+    --muted-foreground: 30 8% 45%;
+    --accent: 41 53% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 6 64% 46%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 35 31% 88%;
+    --input: 35 31% 88%;
+    --ring: 41 53% 47%;
+    --radius: 2px;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html, body { @apply bg-white text-brand-ink; }
+  body { font-family: var(--font-dm-sans), system-ui, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-cormorant), 'Cormorant Garamond', serif; font-weight: 500; letter-spacing: -0.005em; color: var(--eledante-ink, #1A1714); }
+}
+
+@layer components {
+  .container-eledante { @apply mx-auto px-6 md:px-10 lg:px-16 max-w-[1400px]; }
+  .btn-gold { @apply inline-flex items-center justify-center bg-brand-gold text-white px-8 py-4 font-label text-xs hover:bg-brand-gold-light transition-colors duration-200 rounded-btn; }
+  .btn-outline { @apply inline-flex items-center justify-center bg-transparent text-brand-ink border border-brand-border-strong px-8 py-4 font-label text-xs hover:bg-brand-surface transition-colors duration-200 rounded-btn; }
+  .btn-ghost { @apply inline-flex items-center justify-center bg-transparent text-brand-ink px-4 py-2 font-label text-xs hover:bg-brand-surface transition-colors rounded-btn; }
+  .label { @apply font-label text-label text-brand-text-secondary; }
+  .divider-thin { @apply border-t border-brand-border; }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-cormorant), 'Cormorant Garamond', serif; }
+  .font-body { font-family: var(--font-dm-sans), system-ui, sans-serif; }
+  .font-label { font-family: var(--font-montserrat), 'Montserrat', sans-serif; letter-spacing: 0.15em; text-transform: uppercase; }
+  .text-hero { font-size: clamp(3rem, 6vw, 6rem); line-height: 1.05; letter-spacing: -0.01em; }
+  .text-display { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; }
+  .text-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.15; }
+  .text-subhead { font-size: 1.25rem; line-height: 1.4; }
+  .text-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; line-height: 1; }
+  .scrollbar-none::-webkit-scrollbar { display: none; }
+  .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+}

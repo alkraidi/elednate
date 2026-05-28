@@ -1,0 +1,23 @@
+{
+  "name": "eledante",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Eledante — Premium fine jewelry monorepo (Next.js 15 storefront + Medusa.js v2 backend).",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "storefront": "yarn workspace @eledante/storefront",
+    "backend": "yarn workspace @eledante/backend",
+    "dev:storefront": "yarn workspace @eledante/storefront dev",
+    "dev:backend": "yarn workspace @eledante/backend dev",
+    "build": "yarn workspace @eledante/storefront build && yarn workspace @eledante/backend build",
+    "db:setup": "yarn workspace @eledante/backend db:setup",
+    "db:migrate": "yarn workspace @eledante/backend db:migrate",
+    "seed": "yarn workspace @eledante/backend seed"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "yarn@1.22.22"
+}

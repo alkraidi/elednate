@@ -1,0 +1,7 @@
+import type { MedusaRequest, MedusaResponse } from '@medusajs/framework/http';
+import { HOMEPAGE_CONFIG_MODULE } from '../../../../modules/homepage-config';
+
+export async function GET(req: MedusaRequest, res: MedusaResponse) {
+  const service = req.scope.resolve(HOMEPAGE_CONFIG_MODULE) as any;
+  res.json({ config: await service.getActive() });
+}
